@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+
+@import 'variables';
+@import 'mixins';
+
+body {
+  color: #fff;
+  background: rgb(1, 4, 29);
+  font-family: 'Roboto', sans-serif;
+}
+
+.playfair-font {
+  font-family: 'Playfair Display', serif;
+}
