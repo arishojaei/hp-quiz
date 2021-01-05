@@ -5,7 +5,15 @@
       v-for="(q, qIndex) in questions"
       :key="qIndex"
     >
-      {{ q.question }}
+      <template v-if="currentStep == qIndex">
+        <!-- Question -->
+        <h2 class="playfair-font">
+          <span class="opa-5">
+            {{ qIndex+1 }}.
+          </span>
+          {{ q.question }}
+        </h2>
+      </template>
     </div >
   </div>
 </template>
@@ -17,7 +25,8 @@ export default {
   name: 'Steps',
   data () {
     return {
-      questions
+      questions,
+      currentStep: 0
     }
   }
 }

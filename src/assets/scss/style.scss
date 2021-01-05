@@ -4,11 +4,37 @@
 @import 'mixins';
 
 body {
+  font-size: 16px;
   color: #fff;
   background: rgb(1, 4, 29);
   font-family: 'Roboto', sans-serif;
+    
+  @include up-992 {
+    margin: 5rem;
+  }
 }
 
 .playfair-font {
   font-family: 'Playfair Display', serif;
+}
+
+.opa-5 {
+  opacity: 0.5;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+
+  @include up-768 {
+    max-width: 760px;
+  }
+
+  @include up-992 {
+    max-width: 960px;
+  }
+
+  @include up-1200 {
+    max-width: 1170px;
+  }
 }
