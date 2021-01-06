@@ -1,7 +1,6 @@
 <template>
-  <div class="steps">
+  <div>
     <div
-      class="_step"
       v-for="(q, qIndex) in questions"
       :key="qIndex"
     >
@@ -14,6 +13,7 @@
           {{ q.question }}
         </h2>
 
+        <!-- Options -->
         <app-options
           :options="q.options"
           @answerSelect="handleRecievdAnswers"

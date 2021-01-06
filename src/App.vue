@@ -24,7 +24,7 @@ export default {
      * Show result component.
      */
     checkAnswers (payload) {
-      localStorage.setItem('answers', payload)
+      localStorage.setItem('answers', JSON.stringify(payload))
       this.isExamDone = true
     }
   }
