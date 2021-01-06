@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Oswald:wght@500&display=swap');
 
 @import 'variables';
 @import 'mixins';
@@ -7,15 +7,15 @@ body {
   font-size: 16px;
   color: #fff;
   background: rgb(1, 4, 29);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Oswald', sans-serif;
     
   @include up-992 {
     margin: 5rem;
   }
 }
 
-.playfair-font {
-  font-family: 'Playfair Display', serif;
+.dokdo-font {
+  font-family: 'East Sea Dokdo', cursive;
 }
 
 .opa-5 {
@@ -38,3 +38,6 @@ body {
     max-width: 1170px;
   }
 }
+
+// Components
+@import './components/result';

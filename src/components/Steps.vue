@@ -6,7 +6,7 @@
     >
       <template v-if="currentStep == qIndex">
         <!-- Question -->
-        <h2 class="playfair-font">
+        <h2 class="dokdo-font">
           <span class="opa-5">
             {{ qIndex+1 }}.
           </span>
