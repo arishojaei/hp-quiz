@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <app-result v-if="isExamDone" />
-    <app-steps v-else @finish="checkAnswers" />
+    <app-steps v-else @finish="finishExam" />
   </div>
 </template>
 
@@ -19,12 +19,9 @@ export default {
   },
   methods: {
     /**
-     * Get answer array and
-     * set it to local storage.
-     * Show result component.
+     * Finish the exam
      */
-    checkAnswers (payload) {
-      localStorage.setItem('answers', JSON.stringify(payload))
+    finishExam () {
       this.isExamDone = true
     }
   }

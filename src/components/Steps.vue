@@ -37,22 +37,56 @@ export default {
       currentStep: 0
     }
   },
+  watch: {
+    currentStep (value) {
+      localStorage.setItem('currentStep', value)
+    }
+  },
+  created () {
+    this.detectLatestStep()
+  },
   methods: {
     /**
-     * Get selected option index
-     * and push it to answer array
-     * until current step reached
-     * to question last index
+     * Add new answer to
+     * answers array and
+     * execute handleNextStep
      */
     handleRecievdAnswers (payload) {
       this.answers.push(payload)
+      this.handleNextStep()
+    },
+
+    /**
+     * Increase currentStep number
+     * until currentStep reached
+     * question length and execute
+     * saveAnswers
+     */
+    handleNextStep () {
       setTimeout(() => {
-        if (this.currentStep < (this.questions.length - 1)) {
-          this.currentStep++
-        } else {
-          this.$emit('finish', this.answers)
-        }
+        this.saveAnswers()
+        this.currentStep < (this.questions.length - 1)
+          ? this.currentStep++
+          : this.$emit('finish')
       }, 900)
+    },
+
+    /**
+     * Just set answers array
+     * to local storage
+     */
+    saveAnswers () {
+      const answers = JSON.stringify(this.answers)
+      localStorage.setItem('answers', answers)
+    },
+
+    /**
+     * Detect and set latest
+     * step
+     */
+    detectLatestStep () {
+      const step = localStorage.getItem('currentStep')
+      this.currentStep = step | 0
     }
   }
 }
