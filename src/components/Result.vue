@@ -1,5 +1,5 @@
 <template>
-  <div class="_result">
+  <div class="result">
     <img
       :src="isAllCorrect ? successGif : failGif"
       alt="success gif"
@@ -7,21 +7,27 @@
 
     <p>
       <template v-if="isAllCorrect">
-        Wow, you're a true wizard,
-        <br />
-        <span class="opa-5">
-          You answered all the questions correctly
+        <span class="playfair-font">
+          Wow, you're a true wizard,
         </span>
+        <small class="opa-5">
+          You answered all the questions correctly
+        </small>
       </template>
 
       <template v-else>
-        Ohh miserable muggle,
-        <br />
-        <span class="opa-5">
-          You only answered {{ correctAnswers }} question correctly.
+        <span class="playfair-font">
+          Ohh miserable muggle,
         </span>
+        <small class="opa-5">
+          You answered {{ correctAnswers }} question correctly.
+        </small>
       </template>
     </p>
+
+    <button>
+      Test again
+    </button>
   </div>
 </template>
 

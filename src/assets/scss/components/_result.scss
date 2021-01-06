@@ -1,4 +1,4 @@
-._result {
+.result {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,6 +11,28 @@
   > p {
     font-size: 2rem;
     text-align: center;
-    @extend .playfair-font;
+
+    > span {
+      display: block;
+    }
+
+    > small {
+      font-weight: lighter;
+    }
+  }
+
+  > button {
+    border: 0;
+    padding: .8rem 1.3rem;
+    background: $primary-color;
+    border-radius: $radius;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.3rem;
+    transition: all 250ms;
+
+    &:hover {
+      background: darken($primary-color, 9);
+    }
   }
 }
