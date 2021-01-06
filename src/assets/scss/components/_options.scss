@@ -1,0 +1,41 @@
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  max-width: 96%;
+
+  ._option {
+    width: calc((100% / 2) - 1rem);
+    margin: .5rem;
+    
+    input {
+      display: none;
+
+      &:checked + label {
+        background: $primary-color;
+      }
+    }
+
+    label {
+      background: rgba($primary-color, .2);
+      padding: 1rem 1.3rem;
+      display: flex;
+      border-radius: $radius;
+      cursor: pointer;
+      transition: all 250ms;
+      
+      &:hover {
+        background: rgba($primary-color, .4);
+      }
+    }
+  }
+
+  @include down-768 {
+    flex-direction: column;
+
+    ._option {
+      width: 100%;
+      margin: .5rem 0;
+    }
+  }
+}

@@ -46,13 +46,13 @@ export default {
      */
     handleRecievdAnswers (payload) {
       this.answers.push(payload)
-      if (this.currentStep < (this.questions.length - 1)) {
-        setTimeout(() => {
+      setTimeout(() => {
+        if (this.currentStep < (this.questions.length - 1)) {
           this.currentStep++
-        }, 500)
-      } else {
-        this.$emit('finish', this.answers)
-      }
+        } else {
+          this.$emit('finish', this.answers)
+        }
+      }, 900)
     }
   }
 }

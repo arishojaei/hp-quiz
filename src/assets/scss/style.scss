@@ -8,6 +8,7 @@ body {
   color: #fff;
   background: rgb(1, 4, 29);
   font-family: 'Roboto', sans-serif;
+  margin: 1.5rem;
     
   @include up-992 {
     margin: 5rem;
@@ -40,4 +41,5 @@ body {
 }
 
 // Components
-@import './components/result'
+@import './components/options';
+@import './components/result';
