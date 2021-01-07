@@ -1,5 +1,5 @@
 # Harry Potter Quiz
-This is just a Recruitment Test.
+This is just a recruitment Test.
 
 ## Install modules
 ```
