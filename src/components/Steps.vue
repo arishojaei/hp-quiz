@@ -63,17 +63,17 @@ export default {
      * saveAnswers
      */
     handleNextStep () {
+      this.saveAnswers()
       setTimeout(() => {
-        this.saveAnswers()
         this.currentStep < (this.questions.length - 1)
           ? this.currentStep++
           : this.$emit('finish')
-      }, 900)
+      }, 350)
     },
 
     /**
      * Just set answers array
-     * to local storage
+     * to the local storage
      */
     saveAnswers () {
       const answers = JSON.stringify(this.answers)
