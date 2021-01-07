@@ -6,6 +6,7 @@
     >
 
     <p>
+      <!-- Success message -->
       <template v-if="isAllCorrect">
         <span class="playfair-font">
           Wow, you're a true wizard,
@@ -15,6 +16,7 @@
         </small>
       </template>
 
+      <!-- Fail message -->
       <template v-else>
         <span class="playfair-font">
           Ohh miserable muggle,
@@ -25,7 +27,8 @@
       </template>
     </p>
 
-    <button>
+    <!-- Test againg button -->
+    <button @click="testAgain">
       Test again
     </button>
   </div>
@@ -56,14 +59,32 @@ export default {
     this.showResult()
   },
   methods: {
+    /**
+     * Get answers array from
+     * local storage and compare
+     * them with qestions array
+     * to detect which answer is
+     * correct
+     */
     showResult () {
       const answers = JSON.parse(localStorage.getItem('answers'))
-
       for (const i in this.questions) {
-        if (this.questions[i].options[answers[i]].value) {
+        const isAnswerCorrect = this.questions[i].options[answers[i]].value
+        if (isAnswerCorrect) {
           this.correctAnswers++
         }
       }
+    },
+
+    /**
+     * Set currentStep in local storage
+     * to 0 (this means first question step)
+     * and then execute chechIsExamDone
+     * funtion in App component
+     */
+    testAgain () {
+      localStorage.setItem('currentStep', 0)
+      this.$parent.checkIsExamDone()
     }
   }
 }

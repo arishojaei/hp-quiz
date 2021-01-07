@@ -17,12 +17,30 @@ export default {
       isExamDone: false
     }
   },
+  created () {
+    this.checkIsExamDone()
+  },
   methods: {
     /**
-     * Finish the exam
+     * Finish the exam and
+     * update currentStep
+     * as finish step
      */
     finishExam () {
       this.isExamDone = true
+      localStorage.setItem('currentStep', -1)
+    },
+
+    /**
+     * Check currentStep value
+     * in local storage to decide
+     * about isExamDone value
+     */
+    checkIsExamDone () {
+      const currentStep = localStorage.getItem('currentStep')
+      currentStep === '-1'
+        ? this.isExamDone = true
+        : this.isExamDone = false
     }
   }
 }
