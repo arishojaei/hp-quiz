@@ -40,5 +40,47 @@
         "value": 0
       }
     ]
+  },
+  {
+    "question": "Who is Draco Malfoy's dad?",
+    "options": [
+      {
+        "text": "Lucius Malfoy",
+        "value": 1
+      },
+      {
+        "text": "George Malfoy",
+        "value": 0
+      },
+      {
+        "text": "Robert Malfoy",
+        "value": 0
+      },
+      {
+        "text": "Arthur Malfoy",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "question": "Who was the first goblin Harry ever met?",
+    "options": [
+      {
+        "text": "Lucius",
+        "value": 0
+      },
+      {
+        "text": "Nagini",
+        "value": 0
+      },
+      {
+        "text": "Acromantula",
+        "value": 0
+      },
+      {
+        "text": "Griphook",
+        "value": 1
+      }
+    ]
   }
 ]
